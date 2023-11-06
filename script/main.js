@@ -13,22 +13,24 @@ const ticketPriceFixed = ticketPrice.toFixed(2);
 const juniorDiscount = (ticketPrice * 20) / 100;
 const juniorDiscountFixed = juniorDiscount.toFixed(2);
 const juniorFinalPrice = ticketPriceFixed - juniorDiscountFixed;
+const juniorFinalPriceFixed = juniorFinalPrice.toFixed(2);
 
 /* sconto senior (età superiore ai 65 anni) */
 const seniorDiscount = (ticketPrice * 40) / 100;
 const seniorDiscountFixed = seniorDiscount.toFixed(2);
 const seniorFinalPrice = ticketPriceFixed - seniorDiscountFixed;
+const seniorFinalPriceFixed = seniorFinalPrice.toFixed(2);
 
 if (passengerAge < 18) {
   console.log(
-    `You're authorized to fare ${travelDistance} km. You are ${passengerAge} years old, so you have right to a discount of ${juniorDiscountFixed} euros! Total price is ${juniorFinalPrice} euros!`
+    `You're authorized to fare ${travelDistance} km. You are ${passengerAge} years old, so you have right to a discount of ${juniorDiscountFixed} euros! Total price is ${juniorFinalPriceFixed} euros!`
   );
 } else if (passengerAge > 65) {
   console.log(
-    `You're authorized to fare ${travelDistance} km. You are ${passengerAge} years old, so you have right to a discount of ${seniorDiscountFixed} euros! Total price is ${seniorFinalPrice} euros!`
+    `You're authorized to fare ${travelDistance} km. You are ${passengerAge} years old, so you have right to a discount of ${seniorDiscountFixed} euros! Total price is ${seniorFinalPriceFixed} euros!`
   );
 } else {
   console.log(
-    `You're authorized to fare ${travelDistance} km. Total price is ${ticketPrice}`
+    `You're authorized to fare ${travelDistance} km. Total price is ${ticketPriceFixed}`
   );
 }
